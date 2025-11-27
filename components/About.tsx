@@ -8,7 +8,7 @@ export default function About() {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-purple-500/5 to-background" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,209,197,0.08),transparent_70%)]" />
 
-      <div className="relative z-10 section grid gap-10 sm:grid-cols-2 sm:items-center">
+      <div className="relative z-10 container grid gap-10 sm:grid-cols-2 sm:items-center">
         <div>
           <h2 className="text-2xl font-semibold bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent">
             About

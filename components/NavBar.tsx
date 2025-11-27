@@ -1,5 +1,7 @@
 "use client"
 import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Menu } from 'lucide-react'
 
 const sections = [
   { id: 'about', label: 'About' },
@@ -33,8 +35,8 @@ export default function NavBar() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-40 border-b border-accent/20 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70 shadow-sm shadow-accent/5">
-      <div className="section flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-16 items-center justify-between">
         <a
           href="#"
           className="text-sm font-semibold tracking-wider bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent hover:from-accent hover:via-foreground hover:to-accent transition-all duration-300"
@@ -46,11 +48,10 @@ export default function NavBar() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className={`px-3 py-2 text-sm transition-all duration-200 relative ${
-                active === s.id
+              className={`px-3 py-2 text-sm transition-all duration-200 relative ${active === s.id
                   ? 'text-accent font-medium'
                   : 'text-foreground/85 hover:text-accent'
-              }`}
+                }`}
             >
               {s.label}
               {active === s.id && (
@@ -59,26 +60,27 @@ export default function NavBar() {
             </a>
           ))}
         </nav>
-        <button
-          className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg border border-accent/30 hover:border-accent hover:bg-accent/10 transition-colors"
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle Menu"
         >
-          <div className="h-4 w-4 text-foreground hover:text-accent transition-colors">☰</div>
-        </button>
+          <Menu className="h-5 w-5" />
+        </Button>
       </div>
       {open && (
-        <div className="md:hidden border-t border-accent/20 bg-background/95">
-          <div className="section py-2 flex flex-col">
+        <div className="md:hidden border-t border-border/40 bg-background/95 backdrop-blur">
+          <div className="container py-2 flex flex-col">
             {sections.map((s) => (
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className={`px-2 py-2 text-sm transition-colors rounded-md ${
-                  active === s.id
+                className={`px-2 py-2 text-sm transition-colors rounded-md ${active === s.id
                     ? 'text-accent font-medium bg-accent/10'
                     : 'text-foreground/90 hover:text-accent hover:bg-accent/5'
-                }`}
+                  }`}
                 onClick={() => setOpen(false)}
               >
                 {s.label}
