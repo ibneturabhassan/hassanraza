@@ -1,16 +1,28 @@
-import Link from 'next/link'
+import NavBar from '@/components/NavBar'
+import Hero from '@/components/Hero'
+import About from '@/components/About'
+import Skills from '@/components/Skills'
+import Experience from '@/components/Experience'
+import Projects from '@/components/Projects'
+import Education from '@/components/Education'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="section py-16 sm:py-24">
-      <header>
-        <h1 className="text-3xl font-semibold">Hi — I'm Hassan Raza</h1>
-        <p className="mt-3 text-muted">Welcome to my portfolio. Browse my projects below.</p>
-      </header>
+    <>
+      <NavBar />
+      <Hero />
 
-      <section className="mt-8">
-        <Link href="/projects" className="btn btn-primary">View Projects</Link>
-      </section>
-    </main>
+      <main>
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   )
 }
