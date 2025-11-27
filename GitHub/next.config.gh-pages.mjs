@@ -10,6 +10,7 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
+  turbopack: {},
   webpack: (config) => {
     config.resolve = config.resolve || {}
     config.resolve.alias = {
