@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   // If deploying to a subpath (e.g., username.github.io/repo-name), uncomment and set:
-  basePath: '',
+  //basePath: '',
   trailingSlash: true,
   images: {
     unoptimized: true, // Required for static export
